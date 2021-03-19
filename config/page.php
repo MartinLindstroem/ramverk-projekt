@@ -12,13 +12,14 @@ return [
         "region" => "layout",
         "template" => "anax/v2/layout/dbwebb_se",
         "data" => [
-            "baseTitle" => " | ramverk1",
+            "baseTitle" => " | WGTOTW",
             "bodyClass" => null,
             "favicon" => "favicon.ico",
             "htmlClass" => null,
             "lang" => "sv",
             "stylesheets" => [
                 "css/dbwebb-se.min.css",
+                "css/empty.css"
             ],
             "javascripts" => [
                 "js/responsive-menu.js",
@@ -28,23 +29,23 @@ return [
 
     // These views are always loaded into the collection of views.
     "views" => [
-        [
-            "region" => "header-col-1",
-            "template" => "anax/v2/header/site_logo",
-            "data" => [
-                "class" => "large",
-                "siteLogo"      => "image/theme/leaf_256x256.png",
-                "siteLogoAlt"   => "Löv",
-            ],
-        ],
+        // [
+        //     "region" => "header-col-1",
+        //     "template" => "anax/v2/header/site_logo",
+        //     "data" => [
+        //         "class" => "large",
+        //         "siteLogo"      => "image/theme/leaf_256x256.png",
+        //         "siteLogoAlt"   => "Löv",
+        //     ],
+        // ],
         [
             "region" => "header-col-1",
             "template" => "anax/v2/header/site_logo_text",
             "data" => [
                 "homeLink"      => "",
-                "siteLogoText"  => "ramverk1",
-                "siteLogoTextIcon" => "image/theme/leaf_40x40.png",
-                "siteLogoTextIconAlt" => "Löv-bild",
+                "siteLogoText"  => "WGTOTW",
+                // "siteLogoTextIcon" => "image/theme/leaf_40x40.png",
+                // "siteLogoTextIconAlt" => "Löv-bild",
             ],
         ],
         [
@@ -54,13 +55,13 @@ return [
                 "navbarConfig" => require __DIR__ . "/navbar/header.php",
             ],
         ],
-        [
-            "region" => "header-col-3",
-            "template" => "anax/v2/navbar/responsive_submenus",
-            "data" => [
-                "navbarConfig" => require __DIR__ . "/navbar/responsive.php",
-            ],
-        ],
+        // [
+        //     "region" => "header-col-3",
+        //     "template" => "anax/v2/navbar/responsive_submenus",
+        //     "data" => [
+        //         "navbarConfig" => require __DIR__ . "/navbar/responsive.php",
+        //     ],
+        // ],
         [
             "region" => "footer",
             "template" => "anax/v2/columns/multiple_columns",
