@@ -1,5 +1,60 @@
-/*!
- * An empty stylesheet.
- *
- * To use for showing how the website looks when there is no style at all.
- */
+
+body {
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    border-bottom: none;
+}
+
+.rm-navbar {
+    margin-bottom: 100px;
+}
+
+.my-navbar li a:hover {
+    text-decoration-color: orange;
+}
+
+.site-logo-text {
+    text-shadow: 2px -2px 2px orange;
+}
+
+.site-logo-text a:hover {
+    text-shadow: 2px -2px 2px orange;
+}
+
+.block {
+    border-left: 1px solid orange;
+    padding: 10px;
+    box-shadow: 10px 10px 10px #555;
+    text-align: center;
+}
+
+.question {
+    background-color: orange;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px #ddd;
+}
+
+.tag {
+    background-color: orange;
+    margin: 10px;
+    padding: 5px;
+    width: 20%;
+    border-radius: 3px;
+    float: left;
+}
+
+.tag a {
+    color: #fff;
+}
+
+.comment {
+    border-bottom: 1px solid orange;
+}
+
+.content {
+    border-bottom: 1px solid orange;
+}
