@@ -9,26 +9,33 @@ $questionPostedBy = $questionUser->find("username", $question->posted_by);
 $avatar = $questionPostedBy->avatar;
 ?>
 <div>
-    <p>Asked: <?= $item->posted ?></p>
-    <p>Asked by: <a href= <?= url("user/profile/{$item->posted_by}"); ?>><?= $item->posted_by ?></a> <img src=<?= $avatar ?> alt=""></p>
-    
-    <?php if ($item->updated) : ?>
-        <p>Last edited: <?= $item->updated ?></p>
-    <?php
-        endif;
-    ?>
-    <p><a href=<?= url("questions/update/{$item->id}"); ?>> Edit</a></p>
-    <div class="content">
-        <h1><?= $item->title ?></h1>
-        <?= $textfilter->doFilter($item->content, $filters) ?>
+    <h1><?= $item->title ?></h1>
+
+    <div class="post-info">
+        <p>Asked: <?= $item->posted ?> | Asked by: <a href= <?= url("user/profile/{$item->posted_by}"); ?>><?= $item->posted_by ?></a> <img src=<?= $avatar ?> alt=""></p>
+        
+        <?php if ($item->updated) : ?>
+            <p>Last edited: <?= $item->updated ?></p>
+        <?php
+            endif;
+        ?>
+        <p><a href=<?= url("questions/update/{$item->id}"); ?>> Edit</a></p>
     </div>
-    <h2>comments</h2>
+
+    <div class="content">
+        <?= $textfilter->doFilter($item->content, $filters) ?>
+        <br>
+        <?php foreach ($tags as $tag) : ?>
+            <a class="question-tag" href= <?= url("questions/tagged/{$tag->tag_name}"); ?>><?= $tag->tag_name ?></a>
+        <?php endforeach; ?>
+    </div>
+    <br>
+    <br>
     <div class="comments">
         <?php foreach ($comments as $comment) : ?>
             <div class="comment">
                 <?= $textfilter->doFilter($comment->content, $filters) ?>
                 <a href= <?= url("user/profile/{$comment->posted_by}"); ?>><?= $comment->posted_by ?></a>
-                <br>
                 <?= $comment->posted ?>
             </div>
         <?php endforeach; ?>
@@ -59,14 +66,8 @@ $avatar = $questionPostedBy->avatar;
             <?= $textfilter->doFilter($answer->content, $filters) ?>
         </div>
         <div class="info">
-            <div class="user">
-                <span>
-                <p>Answered by: <a href= <?= url("user/profile/{$answer->posted_by}"); ?>><?= $answer->posted_by ?></a></p>
-                <img src=<?= $avatar ?> alt="avatar">
-                </span>
-                
-            </div>
-            <p>Answered: <?= $answer->posted ?></p>
+            <p>Answered: <?= $answer->posted ?> | Answered by: <a href= <?= url("user/profile/{$answer->posted_by}"); ?>><?= $answer->posted_by ?></a></p>
+            <img src=<?= $avatar ?> alt="avatar">
             <?php if($answer->updated) : ?>
                 <p>Last edited: <?= $answer->updated ?></p>
             <?php endif; ?>
@@ -77,13 +78,15 @@ $avatar = $questionPostedBy->avatar;
                 </p>
             <?php endif; ?>
         </div>
-        <h2>comments</h2>
+        <!-- <h2>comments</h2> -->
+        <br>
+        <br>
         <div class="comments">
             <?php foreach ($answerComments as $answerComment) : ?>
                 <div class="comment">
                     <?= $textfilter->doFilter($answerComment->content, $filters) ?>
-                    <p><a href= <?= url("user/profile/{$answerComment->posted_by}"); ?>><?= $answerComment->posted_by ?></a></p>
-                    <!-- <img src=<?= $an ?> alt=""> -->
+                    <a href= <?= url("user/profile/{$answerComment->posted_by}"); ?>><?= $answerComment->posted_by ?></a>
+                    <?= $comment->posted ?>
                 </div>
             <?php endforeach; ?>
         </div>
