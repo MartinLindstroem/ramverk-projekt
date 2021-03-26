@@ -154,6 +154,10 @@ class QuestionController implements ContainerInjectableInterface
         $comment->setDb($this->di->get("dbqb"));
         $comments = $comment->findAllWhere("question_id = ?", $id);
 
+        $tag = new \Marty\Tag2Question\Tag2Question;
+        $tag->setDb($this->di->get("dbqb"));
+        $tags = $tag->findAllWhere("question_id = ?", $id);
+
         $formId = 0;
 
         $questionCommentForm = new \Marty\Comment\HTMLForm\CreateForm($this->di, $id, "question", $formId);
@@ -179,8 +183,8 @@ class QuestionController implements ContainerInjectableInterface
             "comment" => $comment,
             "comments" => $comments,
             "formId" => $formId,
-            // "questionId" => $id,
             "di" => $this->di,
+            "tags" => $tags,
         ]);
 
         return $page->render([
