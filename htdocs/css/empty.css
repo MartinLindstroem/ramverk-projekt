@@ -52,9 +52,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .comment {
-    border-bottom: 1px solid orange;
+    border: 1px solid orange;
+    padding: 5px;
+    width: 600px;
 }
 
-.content {
-    border-bottom: 1px solid orange;
+.post-info {
+    border-bottom: 1px solid black;
 }
+
+.answer {
+    border-bottom: 1px solid black;
+}
+
+.info {
+    background-color: #eee;
+    width: 500px;
+    font-size: 14px;
+}
+
+.question-tag {
+    background-color: #e6f2ff;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.site-footer {
+    border: none;
+    box-shadow: none;
+}
+
