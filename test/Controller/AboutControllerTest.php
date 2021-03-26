@@ -1,20 +1,16 @@
 <?php
 
-namespace Anax\Controller;
+namespace Marty\Controller;
 
 use Anax\DI\DIFactoryConfig;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Test the FlatFileContentController.
+ * Test the SampleController.
  */
-class FlatFileContentControllerTest extends TestCase
+class AboutControllerTest extends TestCase
 {
-    
-    // Create the di container.
     protected $di;
-    protected $controller;
-
 
 
     /**
@@ -33,25 +29,17 @@ class FlatFileContentControllerTest extends TestCase
 
         // View helpers uses the global $di so it needs its value
         $di = $this->di;
-
-        // Setup the controller
-        $this->controller = new FlatFileContentController();
-        $this->controller->setDI($this->di);
-        //$this->controller->initialize();
     }
-
-
 
     /**
      * Test the route "index".
      */
     public function testIndexAction()
     {
-        $res = $this->controller->catchAll();
-        $this->assertInstanceOf("\Anax\Response\Response", $res);
-
+        $controller = new \Marty\About\AboutPageController();
+        $controller->setDi($this->di);
+        $res = $controller->indexAction();
         $body = $res->getBody();
-        $exp = "| WGTOTW</title>";
-        $this->assertContains($exp, $body);
+        $this->assertContains("About", $body);
     }
 }
