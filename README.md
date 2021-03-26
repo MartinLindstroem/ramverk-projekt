@@ -21,3 +21,5 @@
 
     sqlite3 data/db.sqlite < sql/ddl/ddl.sql
 ```
+
+[![MartinLindstroem](https://circleci.com/github/MartinLindstroem/ramverk-projekt.svg?style=svg)](https://circleci.com/github/MartinLindstroem/ramverk-projekt)
