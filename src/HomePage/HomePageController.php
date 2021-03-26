@@ -91,7 +91,7 @@ class HomePageController implements ContainerInjectableInterface
         ]);
 
         return $page->render([
-            "title" => "A collection of items",
+            "title" => "Home",
         ]);
     }
 }
