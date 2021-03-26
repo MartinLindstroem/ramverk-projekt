@@ -13,7 +13,7 @@
     /ramverk-projekt$ mkdir cache/anax
 ```
 4. Create database file and create tables.
-```
+```bash
     /ramverk-projekt$ chmod 777 data/
     /ramverk-projekt$ touch data/db.sqlite
     /ramverk-projekt$ sqlite3 data/db.sqlite # Exit out immediately, ctrl-d
