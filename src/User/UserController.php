@@ -158,7 +158,7 @@ class UserController implements ContainerInjectableInterface
         $question->setDb($this->di->get("dbqb"));
         $questions = $question->findAllWhere("posted_by = ?", $username);
 
-        $answer = new \Marty\Answer\answer();
+        $answer = new \Marty\Answer\Answer();
         $answer->setDb($this->di->get("dbqb"));
         $answers = $answer->findAllWhere("posted_by = ?", $username);
         
