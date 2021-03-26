@@ -11,15 +11,15 @@ return [
     // Here comes the menu items
     "items" => [
         [
-            "text" => "Hem",
-            "url" => "",
+            "text" => "Home",
+            "url" => "home",
             "title" => "",
         ],
-        [
-            "text" => "Om",
-            "url" => "om",
-            "title" => "",
-        ],
+        // [
+        //     "text" => "About",
+        //     "url" => "about",
+        //     "title" => "",
+        // ],
         [
             "text" => "Questions",
             "url" => "questions",
@@ -35,6 +35,11 @@ return [
         //     "url" => "user/register",
         //     "title" => "Sign up",
         // ],
+        [
+            "text" => "About",
+            "url" => "about",
+            "title" => "",
+        ],
         ($user ? ["text" => "Profile", "url" => "user/profile/{$user}", "title" => "Profile"] : ["text" => "Sign up", "url" => "user/register", "title" => "Sign up"])
     ],
 ];
