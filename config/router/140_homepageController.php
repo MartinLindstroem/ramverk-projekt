@@ -6,7 +6,7 @@ return [
     "routes" => [
         [
             "info" => "Home",
-            "mount" => "",
+            "mount" => "home",
             "handler" => "\Marty\HomePage\HomePageController",
         ],
     ]
